@@ -1,3 +1,4 @@
+# Cleaned version - conflict resolved
 import os
 import uuid
 import numpy as np
@@ -49,12 +50,6 @@ def analyze():
 
     file = request.files['xray']
     unique_id = uuid.uuid4().hex[:8]
-<<<<<<< HEAD
-=======
-    
-    os.makedirs(os.path.join('static', 'uploads'), exist_ok=True)
-    
->>>>>>> 859337d3414a83af5948425433126928299e7917
     upload_path = os.path.join('static', 'uploads', unique_id + '_' + file.filename)
     file.save(upload_path)
 
@@ -73,8 +68,4 @@ def analyze():
 
     return render_template('dentistry/dentistry.html',
                            original=upload_path,
-<<<<<<< HEAD
                            result=result_path)
-=======
-                           result=result_path)
->>>>>>> 859337d3414a83af5948425433126928299e7917
