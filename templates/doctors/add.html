@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Doctor{% endblock %}
+
+{% block content %}
+<div class="card shadow">
+    <div class="card-body">
+        
+        <h4 class="mb-4"><i class="fas fa-user-md"></i> Add New Doctor</h4>
+        
+        <form method="POST">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-control" name="first_name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" class="form-control" name="last_name" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Specialty</label>
+                    <select class="form-select" name="specialty" required>
+                        <option value="">Select Specialty</option>
+                        <option value="Internal Medicine">Internal Medicine</option>
+                        <option value="Cardiology">Cardiology</option>
+                        <option value="Neurology">Neurology</option>
+                        <option value="Pediatrics">Pediatrics</option>
+                        <option value="Orthopedics">Orthopedics</option>
+                        <option value="Surgery">Surgery</option>
+                        <option value="ENT">ENT</option>
+                        <option value="Dermatology">Dermatology</option>
+                        <option value="Psychiatry">Psychiatry</option>
+                        <option value="Ophthalmology">Ophthalmology</option>
+                        <option value="Dentistry">Dentistry</option>
+                        <option value="Family Medicine">Family Medicine</option>
+                        <option value="Emergency Medicine">Emergency Medicine</option>
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">License Number</label>
+                    <input type="text" class="form-control" name="license_number" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Phone</label>
+                    <input type="text" class="form-control" name="phone">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email">
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Department</label>
+                <input type="text" class="form-control" name="department">
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i> Save Doctor
+            </button>
+            <a href="/doctors" class="btn btn-secondary">Cancel</a>
+
+        </form>
+    </div>
+</div>
+{% endblock %}

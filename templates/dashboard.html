@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - iHIS{% endblock %}
+
+{% block content %}
+<div class="row">
+    
+    <!-- Welcome Message -->
+    <div class="col-12 mb-4">
+        <div class="card shadow">
+            <div class="card-body">
+                <h4>Welcome, {{ current_user.username }}! 👋</h4>
+                <p class="text-muted">Role: {{ current_user.role }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="col-md-3 mb-3">
+        <div class="card shadow text-white bg-primary">
+            <div class="card-body">
+                <h5>Patients</h5>
+                <h2>{{ patients_count }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card shadow text-white bg-success">
+            <div class="card-body">
+                <h5>Doctors</h5>
+                <h2>{{ doctors_count }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card shadow text-white bg-warning">
+            <div class="card-body">
+                <h5>Appointments</h5>
+                <h2>{{ appointments_count }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card shadow text-white bg-danger">
+            <div class="card-body">
+                <h5>Lab Tests</h5>
+                <h2>0</h2>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Logout -->
+<a href="/logout" class="btn btn-danger mt-3">Logout</a>
+
+{% endblock %}

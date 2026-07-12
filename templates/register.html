@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}Register - iHIS{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-body p-4">
+                
+                <!-- Title -->
+                <h3 class="text-center text-primary mb-4">
+                    <i class="fas fa-hospital"></i> iHIS
+                </h3>
+                <h5 class="text-center mb-4">Create Account</h5>
+                
+                <!-- Form -->
+                <form method="POST">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-control" name="username" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Role</label>
+                        <select class="form-select" name="role" required>
+                            <option value="">Select Role</option>
+                            <option value="patient">Patient</option>
+                            <option value="doctor">Doctor</option>
+                            <option value="nurse">Nurse</option>
+                            <option value="pharmacist">Pharmacist</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-100">
+                        Register
+                    </button>
+                </form>
+                
+                <hr>
+                <p class="text-center">
+                    Already have an account? 
+                    <a href="/login">Login</a>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

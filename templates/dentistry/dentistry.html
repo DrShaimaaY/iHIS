@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2><i class="fas fa-tooth"></i> Dental X-ray Analysis</h2>
+    <p class="text-muted">Upload a panoramic dental X-ray to detect and segment teeth using AI</p>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <form action="/dentistry/analyze" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label">Upload X-ray Image</label>
+                    <input type="file" name="xray" class="form-control" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-search"></i> Analyze
+                </button>
+            </form>
+        </div>
+    </div>
+
+    {% if error %}
+    <div class="alert alert-danger mt-3">{{ error }}</div>
+    {% endif %}
+
+    {% if result %}
+    <div class="card mt-4">
+        <div class="card-header">Analysis Results</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <h5>Original X-ray</h5>
+                    <img src="/{{ original }}" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6 text-center">
+                    <h5>Segmentation Result</h5>
+                    <img src="/{{ result }}" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
